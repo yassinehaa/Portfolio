@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(45deg, #000000, #441167, #520f78, #a479b1, #e0c2ed);
+  background-size: 400% 400%;
+  animation: wave 50s ease infinite;
+  line-height: 1.6;
+}
+
+@keyframes wave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

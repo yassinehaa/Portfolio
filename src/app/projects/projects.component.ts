@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  display(){
+
+  }
 
 }

@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-mail = 'hayassine0@gmail.com'
+  contact = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
+
+  onSubmit() {
+    if (this.contact.name && this.contact.email && this.contact.subject && this.contact.message) {
+      console.log('Form Submitted', this.contact);
+      alert('Message sent successfully!');
+      this.resetForm();
+    }
+  }
+
+  resetForm() {
+    this.contact = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
+  }
 }

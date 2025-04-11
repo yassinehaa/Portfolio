@@ -1,29 +1,81 @@
+/* CSS */
 .navbar {
-    background-color: #333;
-    padding: 10px;
-  }
-  
+  background: rgba(51, 51, 51, 0.9); /* Dark base with transparency, inspired by your #333 */
+  backdrop-filter: blur(8px); /* Glassy effect for modern vibe */
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around; /* From your original CSS */
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-outline-primary {
+  padding: 10px 20px; /* From your original button style */
+  background: linear-gradient(45deg, #a855f7, #d8b4fe); /* Purple gradient to match theme */
+  color: white;
+  border: none;
+  border-radius: 5px; /* From your original */
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(45deg, #7e22ce, #b8a2e6); /* Darker purple gradient */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4); /* Glow */
+}
+
+.btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn-outline-primary:hover::before {
+  width: 150px;
+  height: 150px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
   .nav-list {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
-  
-  .nav-list li {
-    margin: 0 10px;
+
+  .btn-outline-primary {
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
-  
-  .nav-list button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .nav-list button:hover {
-    background-color: #0056b3;
-  }
+}
+
+body {
+  background-color: #800080; /* Adjust to your exact purple if different */
+}
